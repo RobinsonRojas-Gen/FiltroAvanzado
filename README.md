@@ -39,7 +39,7 @@ Cada grupo trabajará en **la actividad que le corresponde según su número de 
 
   ## Nuestro aporte:
   
-  HTML: "abajo de los botones ordenar de A-Z/Z-A
+  HTML: "abajo de los botones ordenar de A-Z/Z-A"
   
   ```html
   <div class="btn-group">
