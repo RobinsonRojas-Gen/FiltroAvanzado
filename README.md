@@ -35,7 +35,81 @@ Cada grupo trabajará en **la actividad que le corresponde según su número de 
 - Botones predefinidos para mostrar:
   - Solo usuarios con Gmail.
   - Solo usuarios con Yahoo.
-- **Tip:** Usar `filter()` con `endsWith()`.  
+- **Tip:** Usar `filter()` con `endsWith()`.
+
+  ## Nuestro aporte:
+  
+  HTML: "abajo de los botones ordenar de A-Z/Z-A
+  
+  ```html
+  <div class="btn-group">
+  <button class="btn btn-outline-purple" id="filterYahooBtn">Filtrar Yahoo</button> // Botón para filtrar por correo que termina en @yahoo.com
+  <button class="btn btn-outline-success" id="filterGmailBtn">Filtrar Gmail</button> // Botón para filtrar por correo que termina en @gmail.com
+  <button class="btn btn-outline-dark" id="showAllBtn">Mostrar Todos</button> // Botón que nulifica los filtros y muestra todos los usuarios
+  </div>
+  ```
+
+  css: Al final del código
+
+```css
+/* Loader simple */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+ 
+/* Botón morado personalizado para Yahoo */
+.btn-outline-purple {
+    color: #6f42c1;
+    border-color: #6f42c1; 
+}
+ 
+.btn-outline-purple:hover {
+    background-color: #6f42c1;
+    color: white;
+}
+ 
+/* Asegura que el icono tenga margen solo si es inline */
+.btn i {
+    margin-right: 0.5rem;
+}
+
+.btn-group {
+    display: flex;      
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+```
+
+.js: al final del código
+
+```javascript
+const filterYahooBtn = document.getElementById('filterYahooBtn');
+const filterGmailBtn = document.getElementById('filterGmailBtn');
+const showAllBtn = document.getElementById('showAllBtn');
+ 
+// Función para filtrar por dominio de email
+const filtrarPorDominio = (dominio) => {
+    const filtered = users.filter(u => u.email.toLowerCase().includes(`@${dominio}`));
+    renderUsers(filtered);
+};
+ 
+// Mostrar todos los usuarios
+const mostrarTodos = () => {
+    renderUsers();
+};
+ 
+// Eventos
+filterYahooBtn.addEventListener('click', () => filtrarPorDominio('yahoo'));
+filterGmailBtn.addEventListener('click', () => filtrarPorDominio('gmail'));
+showAllBtn.addEventListener('click', mostrarTodos);
+```
 
 ---
 
