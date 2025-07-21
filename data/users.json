@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": "420f",
+      "fullName": "Anka Vlahović",
+      "email": "anka.vlahovic@example.com",
+      "phone": "026-0788-721",
+      "profileImage": "https://randomuser.me/api/portraits/women/12.jpg"
+    },
+    {
+      "id": "05a2",
+      "fullName": "Zulmira Novaes",
+      "email": "zulmira.novaes@example.com",
+      "phone": "(41) 2538-9055",
+      "profileImage": "https://randomuser.me/api/portraits/women/40.jpg"
+    },
+    {
+      "id": "d578",
+      "fullName": "Thomas Williams",
+      "email": "thomas.williams@gmail.com",
+      "phone": "(447)-615-1988",
+      "profileImage": "https://randomuser.me/api/portraits/men/74.jpg"
+    },
+    {
+      "id": "6295",
+      "fullName": "Brooklyn Thompson",
+      "email": "brooklyn.thompson@yahoo.com",
+      "phone": "(068)-694-0615",
+      "profileImage": "https://randomuser.me/api/portraits/women/26.jpg"
+    },
+    {
+      "id": "3158",
+      "fullName": "Aristides Moraes",
+      "email": "aristides.moraes@gmail.com",
+      "phone": "(60) 0435-1102",
+      "profileImage": "https://randomuser.me/api/portraits/men/58.jpg"
+    },
+    {
+      "id": "8ab0",
+      "fullName": "Vilho Kokko",
+      "email": "vilho.kokko@yahoo.com",
+      "phone": "09-149-146",
+      "profileImage": "https://randomuser.me/api/portraits/men/36.jpg"
+    },
+    {
+      "id": "6c87",
+      "fullName": "Ralph Cruz",
+      "email": "ralph.cruz@example.com",
+      "phone": "(895) 997-7447",
+      "profileImage": "https://randomuser.me/api/portraits/men/54.jpg"
+    }
+  ]
+}
