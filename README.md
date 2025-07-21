@@ -1,81 +1,86 @@
-# **CRUD Usuarios – Versión 4 (con JSON Server)**
+# **Actividad Grupal – CRUD Usuarios Versión 5 (v5)**
 
-## **Descripción**
-La **versión 4** del CRUD de usuarios incorpora persistencia real usando un archivo **`data/users.json`** gestionado a través de **`json-server`**.  
-Esto permite que las operaciones **Crear, Editar y Eliminar** modifiquen directamente el archivo JSON, simulando un backend real.
-
----
-
-## **Nuevas Funcionalidades**
-- **Persistencia en JSON Server:**  
-  Los datos se almacenan en el archivo `data/users.json` y se manejan mediante endpoints REST (`GET`, `POST`, `PUT`, `DELETE`).
-
-- **Identificación por ID:**  
-  Cada usuario tiene un campo `id` único generado automáticamente por `json-server`.
-
-- **Integración híbrida:**  
-  - `api.js` sigue proporcionando datos aleatorios desde **RandomUser** para autocompletar formularios.
-  - `scripts.js` gestiona el CRUD real a través de **http://localhost:3000/users**.
+## **Objetivo**
+El objetivo de esta versión es **mejorar el CRUD de usuarios (v4)** añadiendo nuevas funcionalidades, validaciones, animaciones y mejoras de UI/UX.  
+Cada grupo trabajará en **la actividad que le corresponde según su número de grupo**.
 
 ---
 
-## **Requisitos**
-- **Node.js** instalado.
-- **json-server** (se instala una sola vez).
+## **Dinámica de Trabajo**
+- **Grupos:** 7 grupos.
+- **Tiempo Total:** 1 hora (con 5 min de presentación de la actividad realizada).
+- **Apoyo:** Se permite consultar IA o documentación, pero deben entender y explicar el código durante la presentación.
+- **Presentador:** La persona que presentará será elegida por el profesor.
+- **Repositorio:** Cada grupo debe subir **un solo repositorio grupal**.  
+  *No es necesario que cada persona suba su código individualmente.*
+---
 
-### **Instalar json-server**
-```bash
-npm install -g json-server
-```
+## **Instrucciones Generales**
+- Cada grupo **debe completar únicamente la tarea que le corresponde**.  
+- **Si desean hacer otras actividades como práctica, es opcional.**  
+
+
+## **Actividades por Grupo**
+
+### **Grupo 1: Validaciones Mejoradas**
+- Implementar validaciones dinámicas:
+  - Mostrar mensajes de error en tiempo real mientras el usuario escribe.
+  - Resaltar campos inválidos con borde rojo.
+- **Tip:** Usar eventos `input` y manipulación de clases (`classList.add/remove`).
 
 ---
 
-## **Estructura del Proyecto**
-```
-/v4
-│
-├── index.html
-├── data/
-│   └── users.json
-├── assets/
-│   ├── js/
-│   │   ├── scripts.js
-│   │   ├── api.js
-│   │   └── filter.js
-│   └── css/
-│       └── style.css
-└── README.md
-```
+### **Grupo 2: Filtro Avanzado**
+- Agregar un filtro por **dominio de email** (ejemplo: `@gmail.com`, `@yahoo.com`).
+- Botones predefinidos para mostrar:
+  - Solo usuarios con Gmail.
+  - Solo usuarios con Yahoo.
+- **Tip:** Usar `filter()` con `endsWith()`.  
 
 ---
 
-## **Iniciar el servidor**
-Ejecuta este comando desde la carpeta del proyecto (donde está `data/users.json`):
-
-```bash
-json-server --watch data/users.json --port 3000
-```
-
-- El endpoint principal será:  
-  **`http://localhost:3000/users`**
-
-- Abre el navegador en tu archivo **`index.html`** para usar la aplicación.
+### **Grupo 3: Paginación Simple**
+- Mostrar solo **5 usuarios por página**.
+- Agregar botones **Anterior** y **Siguiente** para cambiar de página.
+- **Tip:** Controlar un índice `currentPage` y usar `slice()` para renderizar.
 
 ---
 
-## **Características heredadas**
-- **Formulario de Registro:** Permite ingresar nombre, email y teléfono.
-- **Auto-rellenado:** Botón que obtiene datos aleatorios de la API [RandomUser](https://randomuser.me/).
-- **Lista de Usuarios:** Muestra tarjetas con datos de cada usuario.
-- **Edición y Eliminación:** Modales para editar o confirmar eliminación.
-- **Búsqueda y Ordenamiento:** A-Z y Z-A (gracias a `filter.js`).
-- **Validaciones y Notificaciones:** Validación básica de datos y notificaciones con Bootstrap Toast.
+### **Grupo 4: Sistema de Favoritos**
+- Agregar un botón **"⭐ Favorito"** en cada tarjeta.
+- Crear un filtro para mostrar solo los favoritos.
+- Guardar el estado con una propiedad `isFavorite` en cada usuario.
 
 ---
 
-## **Notas Importantes**
-- Si `json-server` no está corriendo, las operaciones CRUD (guardar, editar, eliminar) darán error.
-- Si cambias el puerto o la ruta del servidor, actualiza la constante `USERS_API_URL` en **scripts.js**:
-  ```javascript
-  const USERS_API_URL = 'http://localhost:3000/users';
-  ```
+### **Grupo 5: Subida de Imagen de Perfil**
+- Permitir que el usuario suba una imagen desde su computadora.
+- Mostrar una **vista previa** antes de guardar usando `FileReader`.
+- Reemplazar la imagen por defecto (`profileImage`) con la seleccionada.
+
+---
+
+### **Grupo 6: Animaciones y Transiciones**
+- Agregar animaciones CSS al agregar, editar o eliminar usuarios.
+  - Ejemplo: animar entrada de una tarjeta con `@keyframes fadeIn`.
+  - Animación de "deslizamiento" al eliminar una tarjeta.
+- **Plus:** Mostrar un **loading spinner** mientras se cargan usuarios.
+
+---
+
+### **Grupo 7: Mejora del Diseño**
+- Rediseñar la interfaz usando **Bootstrap avanzado**:
+  - **Tooltips** para botones Editar/Eliminar.
+  - **Badges** con número de usuarios favoritos.
+  - Mejorar la estética con `cards`, sombras y colores.
+
+---
+
+---
+
+## **Entrega**
+Cada grupo debe:
+1. Subir **un único repositorio grupal** con la actividad completada.
+2. Mostrar en vivo su funcionalidad.
+3. Explicar su código y cómo manipularon el DOM.
+---
